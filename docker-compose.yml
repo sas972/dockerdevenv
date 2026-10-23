@@ -1,0 +1,30 @@
+services:
+  # 1. VS Code Server: accessible from browser (http://localhost:8443)
+  vscode:
+    build: .
+    container_name: asio-vscode-server
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - vscode-data:/root/.local/share/code-server
+    ports:
+      - "8443:8443"  # VS Code Server web interface
+      - "8080:8080"  # C++ TCP Echo Server port
+    restart: unless-stopped
+    command: code-server --bind-addr 0.0.0.0:8443 --auth none /workspace
+
+  # 2. Interactive command line for terminal usage (optional alternative)
+  dev:
+    build: .
+    container_name: asio-cpp-dev
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    ports:
+      - "8080:8080"
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+
+volumes:
+  vscode-data:
