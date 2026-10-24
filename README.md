@@ -9,7 +9,7 @@ The entire C++ toolchain, Boost libraries, and development tools reside inside t
 ## File Structure
 
 - [`CMakeLists.txt`](file:///Users/sas/projects/cpp/indockerexample/CMakeLists.txt) – CMake configuration (C++20, Boost and pthreads linking).
-- [`src/main.cpp`](file:///Users/sas/projects/cpp/indockerexample/src/main.cpp) – Asynchronous Boost.Asio TCP Echo server.
+- [`src/main.cpp`](file:///Users/sas/projects/cpp/indockerexample/src/main.cpp) – Asynchronous Boost.Asio TCP Echo server using C++20 coroutines (`co_await`).
 - [`Dockerfile`](file:///Users/sas/projects/cpp/indockerexample/Dockerfile) – Lightweight Debian Bookworm Slim container with C++ toolchain, Boost, and `code-server`.
 - [`docker-compose.yml`](file:///Users/sas/projects/cpp/indockerexample/docker-compose.yml) – Container services and port mappings (`8443`, `8080`).
 - [`.devcontainer/devcontainer.json`](file:///Users/sas/projects/cpp/indockerexample/.devcontainer/devcontainer.json) – Configuration for the native desktop VS Code Dev Containers extension.

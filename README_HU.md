@@ -9,7 +9,7 @@ Ez a projekt egy aszinkron C++ TCP echo szerver példa **Boost.Asio** segítség
 ## Fájlstruktúra
 
 - [`CMakeLists.txt`](file:///Users/sas/projects/cpp/indockerexample/CMakeLists.txt) – CMake konfiguráció (C++20, Boost és pthreads linkelés).
-- [`src/main.cpp`](file:///Users/sas/projects/cpp/indockerexample/src/main.cpp) – Aszinkron Boost.Asio TCP Echo szerver.
+- [`src/main.cpp`](file:///Users/sas/projects/cpp/indockerexample/src/main.cpp) – Aszinkron Boost.Asio TCP Echo szerver C++20 coroutine-okkal (`co_await`).
 - [`Dockerfile`](file:///Users/sas/projects/cpp/indockerexample/Dockerfile) – Debian Bookworm Slim konténer C++ eszközökkel, Boosttal és a `code-server`-rel.
 - [`docker-compose.yml`](file:///Users/sas/projects/cpp/indockerexample/docker-compose.yml) – Konténer szolgáltatások és port-továbbítás (`8443`, `8080`).
 - [`.devcontainer/devcontainer.json`](file:///Users/sas/projects/cpp/indockerexample/.devcontainer/devcontainer.json) – Konfiguráció a natív asztali VS Code Dev Containers kiegészítőhöz.
